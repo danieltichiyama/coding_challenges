@@ -49,6 +49,28 @@ console.log(letterCapitalize(string));
 // Function rangeRover(arr)
 // The function will take an array of two numbers and return the sum of those two numbers AND all numbers between them.  The lowest number will not always come first.  For example rangeRover([1, 4]) should return 10, i.e.(1 + 2 + 3 + 4), rangeRover([4, 1]) should also return 10.
 
+var arrayTwoNum = [1, 4];
+
+var arrayTwoNum2 = [4,1];
+function rangeRover (arr){
+    var num = 0;
+    if (arr[0]<arr[1]){
+        for (i=arr[0];i<arr[1]+1;i++){
+            // console.log (i);
+            num+=i;
+        }
+        return num;
+    }else if(arr[0]>arr[1]){
+        for (i=arr[0];i>arr[1]-1;i--){
+            // console.log (i);
+            num+=i;
+        }
+        return num;
+    }
+}
+
+console.log(rangeRover (arrayTwoNum));
+console.log(rangeRover (arrayTwoNum2));
 // Function missingLetter(str)
 // The function will find the missing letter passed in the parameter and return it.  If all letters are present in the string, the return will be undefined.  For example missingLetter("abce") should return "d", missingLetter("bcd") should return undefined.
 
