@@ -71,9 +71,30 @@ function rangeRover (arr){
 
 console.log(rangeRover (arrayTwoNum));
 console.log(rangeRover (arrayTwoNum2));
+
 // Function missingLetter(str)
 // The function will find the missing letter passed in the parameter and return it.  If all letters are present in the string, the return will be undefined.  For example missingLetter("abce") should return "d", missingLetter("bcd") should return undefined.
 
+alphabetSoup = 'abce';
+alphabetSoupless = 'bcde';
+
+function missingLetter (str){
+    perfectAlphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    var perAlphaSec = perfectAlphabet.slice(perfectAlphabet.indexOf(str[0]),str.length);
+    // console.log(perAlphaSec);
+
+    for (i=0;i<str.length;i++){
+        // console.log(str[i]);
+        // console.log(perAlphaSec[i]);
+        if (str[i]!==perAlphaSec[i]){
+            console.log (perAlphaSec[i]);
+        }
+    }
+
+}
+
+missingLetter (alphabetSoup);
 // Function hailCaesar(num)
 // The function will take the num parameter and convert the given number into a roman numeral.  For example hailCaesar(2) should return "II", hailCaesar(5) should return "V".
 
