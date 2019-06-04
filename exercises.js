@@ -133,6 +133,34 @@ console.log(romanNumerals);
 hailCaesar (randoNum);
 // Function spinalTap(str)
 // The function will convert a string to spinal case.  Spinal case is all-lowercase-words-joined-by-dashes.  For example spinalTap("I own this Taco Stand!") should return "i-own-this-taco-stand!".
+daString = 'This is not your taco stand!'
+
+function spinalTap (str){
+    newestStr = str.replace (/ /g,"-");
+    return newestStr;
+}
+
+console.log(spinalTap(daString));
+
 
 // Function sumFibs(num)
 // The function will return the sum of all ODD Fibonacci numbers up to and including the passed number if it's a Fibonacci number.  The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, where the next number is found by adding up the two numbers before it.  For example subFibs(4) should return 5, sumbFibs(1000) should return 1785.
+
+function sumFibs (num){
+    sum=0;
+    
+    var fibArr = [0,1];
+    for (i=2;i<num;i++){
+        if (fibArr[i-1]<num){
+            fibArr.push(fibArr[i-1]+fibArr[i-2]);
+        }
+    }
+    for (a=0;a<fibArr.length;a++){
+        if (fibArr[a]%2!==0){
+            sum+=fibArr[a];
+        }
+    }return sum;
+}
+
+
+console.log(sumFibs(34));
