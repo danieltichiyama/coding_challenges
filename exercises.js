@@ -91,13 +91,46 @@ function missingLetter (str){
             console.log (perAlphaSec[i]);
         }
     }
-
 }
 
 missingLetter (alphabetSoup);
 // Function hailCaesar(num)
 // The function will take the num parameter and convert the given number into a roman numeral.  For example hailCaesar(2) should return "II", hailCaesar(5) should return "V".
 
+randoNum = 39;
+
+function hailCaesar (num){
+var ten = "X";
+var five = 'V';
+var ones = "I";
+var romanNumerals = '';
+
+var tenz = Math.floor (num/10);
+
+for (i=0;i<tenz;i++){
+    romanNumerals += ten;
+}
+
+var fivez = Math.floor(num%10/5);
+
+for (i=0;i<fivez;i++){
+    romanNumerals += five;
+}
+
+// console.log((num%10)%5/1);
+var onez = Math.floor((num%10)%5/1)
+
+for (i=0;i<onez;i++){
+    romanNumerals += ones;
+}
+
+console.log(romanNumerals);
+
+
+
+}
+
+hailCaesar (randoNum);
 // Function spinalTap(str)
 // The function will convert a string to spinal case.  Spinal case is all-lowercase-words-joined-by-dashes.  For example spinalTap("I own this Taco Stand!") should return "i-own-this-taco-stand!".
 
