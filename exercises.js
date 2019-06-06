@@ -106,28 +106,32 @@ var ones = "I";
 var romanNumerals = '';
 
 var tenz = Math.floor (num/10);
-
+debugger;
 for (i=0;i<tenz;i++){
     romanNumerals += ten;
 }
 
+var beforeFivez = num%10;
 var fivez = Math.floor(num%10/5);
-
-for (i=0;i<fivez;i++){
+if (beforeFivez === 9){
+    romanNumerals += 'IX';
+}else{
+    for (i=0;i<fivez;i++){
     romanNumerals += five;
-}
+    }
+    var onez = Math.floor((beforeFivez)%5/1)
+    if (onez===4){
+        romanNumerals += 'IV';
+    }else{
+       for (i=0;i<onez;i++){
+       romanNumerals += ones;
+        }
 
+    }
+}
 // console.log((num%10)%5/1);
-var onez = Math.floor((num%10)%5/1)
-
-for (i=0;i<onez;i++){
-    romanNumerals += ones;
-}
 
 console.log(romanNumerals);
-
-
-
 }
 
 hailCaesar (randoNum);
@@ -148,19 +152,22 @@ console.log(spinalTap(daString));
 
 function sumFibs (num){
     sum=0;
-    
     var fibArr = [0,1];
+
     for (i=2;i<num;i++){
         if (fibArr[i-1]<num){
             fibArr.push(fibArr[i-1]+fibArr[i-2]);
         }
-    }
+    }console.log(fibArr);
     for (a=0;a<fibArr.length;a++){
-        if (fibArr[a]%2!==0){
+        if (fibArr[a]<=num){
+            if (fibArr[a]%2!==0){
             sum+=fibArr[a];
-        }
+            }
+         }
     }return sum;
 }
 
 
-console.log(sumFibs(34));
+
+console.log(sumFibs(35));
